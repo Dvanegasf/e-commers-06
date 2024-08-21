@@ -32,7 +32,8 @@ const update = catchError(async(req, res) => {
     const { id } = req.params;
 
     const deleteFields = ['password', 'email', 'phone']
-    deleteFields.forEach((field)=> delete req.body[field])
+    
+    deleteFields.forEach((field) => delete req.body[field])
 
     const result = await User.update(
         req.body,

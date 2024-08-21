@@ -5,12 +5,12 @@
   "main": "index.js",
   "bin": "./bin/cli.js",
   "scripts": {
-    "reset:migrate":"node ./src/test/testMigrate.js",
+    "reset:migrate":"node ./src/tests/testMigrate.js",
     "start": "node src/server",
     "dev": "nodemon src/server",
     "test":"jest --detectOpenHandles",
-    "pretest":"npm run reset:migrate"
-    
+    "pretest":"npm run reset:migrate",
+    "posttest":"node ./src/tests/postTest.js"
   },
   "keywords": [],
   "author": "",
