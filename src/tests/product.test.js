@@ -16,6 +16,7 @@ beforeAll(async() => {
         email:"david@gmail.com",
         password:"david123"
     }
+    
     const res = await request(app)
     .post(BASE_URL_LOGIN)
     .send(user)

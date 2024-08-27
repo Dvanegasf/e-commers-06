@@ -55,18 +55,20 @@ const login = catchError(async(req, res) => {
         const token = jwt.sign(
             { user },
             process.env.TOKEN_SECRET,
-        )
+            { expiresIn: '1h' })
+
     return res.status(200).json({ user, token })
 })
-
-
-
-
+const logged = catchError(async(req, res) => {
+    const user = req.user
+    return res.json(user)
+})
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
     update,
-    login
+    login,
+    logged
 }
