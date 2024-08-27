@@ -61,8 +61,6 @@ beforeAll(async() => {
 afterAll(async() => {
     await category.destroy()
     await product.destroy()
-    await Cart.destroy({ where: { userId } })
-    
 });
 
 
