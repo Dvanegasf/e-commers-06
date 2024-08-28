@@ -1,5 +1,5 @@
 const catchError = require('../utils/catchError');
-const ProductImg = require('../models/Productimg');
+const ProductImg = require('../models/ProductImg');
 const path = require('path');
 const fs = require('fs');
 
@@ -26,7 +26,7 @@ const remove = catchError(async(req, res) => {
 
     fs.unlinkSync(imagePath)
 
-    await ProductImg.destroy({ where: { id } });
+    await ProductImg.destroy();
 
     return res.sendStatus(204);
 });
