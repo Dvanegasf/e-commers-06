@@ -3,6 +3,7 @@ const Purchase = require('../models/Purchase');
 const Category = require('../models/Category');
 const Product = require('../models/Product');
 const Cart = require('../models/Cart');
+const ProductImg = require('../models/Productimg');
 
 const getAll = catchError(async(req, res) => {
     const userId = req.user.id
@@ -11,11 +12,17 @@ const getAll = catchError(async(req, res) => {
         include: [
             {
                 model: Product,
-                attributes:{exclude:['createdAt','updatedAt']},
-                include:[{
-                    model: Category,
-                    attributes:['name','id']
-                }]
+                attributes: { exclude: ['createdAt', 'updatedAt'] },
+                include: [
+                    {
+                        model: ProductImg,
+                        attributes: ['url', 'id', 'filename'],
+                    },
+                    {
+                        model: Category,
+                        attributes: ['name', 'id'],
+                    }
+                ]
             }
         ],
         attributes:{exclude:['createdAt','updatedAt']},

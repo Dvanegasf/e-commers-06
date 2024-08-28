@@ -8,6 +8,7 @@ routerUser.route('/')
     .get(verifyJwt,getAll)
     .post(create);
 
+    
 routerUser.route('/login')
     .post(login)
 
