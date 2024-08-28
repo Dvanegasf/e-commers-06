@@ -4,7 +4,7 @@ const routerCategory = require('./category.router');
 const routerProduct = require('./product.router');
 const { verifyJwt } = require('../utils/verify.JWT');
 const routerCart = require('./cart.router');
-const routerProductImg = require('./productImg.router');
+const routerProductImg = require('./productimg.router');
 const routerPurchase = require('./purchase.router');
 const router = express.Router();
 
