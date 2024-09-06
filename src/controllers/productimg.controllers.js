@@ -26,7 +26,7 @@ const remove = catchError(async(req, res) => {
 
     fs.unlinkSync(imagePath)
 
-    await ProductImg.destroy();
+    await ProductImg.destroy({ where: { id } });
 
     return res.sendStatus(204);
 });
